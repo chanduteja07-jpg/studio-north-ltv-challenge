@@ -29,13 +29,13 @@ log(value per active) = cell level + slope × log(1 + age) + γ × (calendar mon
 
 A Duan smearing factor corrects for the log transform. The age term captures upgrades and add-ons that come with tenure. The calendar term captures a steady price and mix trend: holding age fixed, the fitted trend at the December 2025 origin is about +0.8% a month for contribution and +0.4% for net revenue per active member. Each cohort's level is then scaled by its own observed/fitted ratio over the last 3 months. That ratio is shrunk toward 1 with k = 20 member-months. Contribution is capped at net revenue, and zero members always means zero receipts.
 
-**Why this differs from the sBG + Gamma reference:** the reference keeps spend per active member constant. The backtest below shows that leaves a systematic 5 to 8% under-forecast of contribution. Most of the gain here comes from the trended, cohort-calibrated spend. Adding the Weibull shape and recency weighting helps a little on top.
+**Why this differs from the sBG + Gamma reference:** the reference keeps spend per active member constant. The backtest below shows that leaves a systematic 5 to 8% under-forecast of contribution. Most of the gain comes from the trended, cohort-calibrated spend and from recency weighting. The Weibull shape adds only a small edge over sBG once spend is trended (mean WAPE 0.045 vs 0.046). With flat spend, BdW was actually worse than sBG, so the shape parameter is not doing the heavy lifting.
 
 **Extrapolation to ages 24 to 35** (needed only for the January 2024 cohort): BdW survival comes from a parametric curve, so it extrapolates smoothly instead of continuing the last observed hazard. Spend uses log(1 + age), so it grows more slowly at high ages. The calendar trend is extended for 12 months without damping. Damping it by half was worse in validation, but if the price trend stalls, this is the main risk of over-forecasting.
 
 ## Chronological validation
 
-`validation/backtest.py` rebuilds the eight observed tables as they stood at the end of each historical origin. It drops later transactions, and the next period's renewal shows as `pending`. It then forecasts forward and scores cohort × calendar-month contribution WAPE against released history (the same metric as the challenge). The private 2026 outcomes were never used.
+`backtest.py` rebuilds the eight observed tables as they stood at the end of each historical origin. It drops later transactions, and the next period's renewal shows as `pending`. It then forecasts forward and scores cohort × calendar-month contribution WAPE against released history (the same metric as the challenge). The private 2026 outcomes were never used.
 
 | Model | Dec 2024 (12 mo) | Mar 2025 (9 mo) | Jun 2025 (6 mo) | Sep 2025 (3 mo) | Mean |
 |---|---:|---:|---:|---:|---:|
@@ -46,7 +46,7 @@ A Duan smearing factor corrects for the log transform. The age term captures upg
 | sBG, recency + trend + calibration | 0.061 | 0.042 | 0.042 | 0.038 | 0.046 |
 | **BdW, recency + trend + calibration (final)** | **0.054** | **0.045** | **0.042** | **0.037** | **0.045** |
 
-Full results, including signed bias, are in `validation/backtest_results.json`. Reproduce them with `uv run --frozen python validation/backtest.py --data-dir /path/to/data`.
+Full results, including signed bias, are in `backtest_results.json`. Reproduce them with `uv run --frozen python backtest.py --data-dir /path/to/data`.
 
 **Limitations.** At the 2025 origins the forecast still under-predicts retained members by about 3%, which suggests hazards were improving slightly over calendar time. The final model does not use engagement (`product_events`) or feedback signals. The two origins with the longest horizons have the least spend history for estimating the trend. Validation measures accuracy on history only; it does not tell us how the model will score on the private holdout.
 
@@ -54,6 +54,6 @@ Full results, including signed bias, are in `validation/backtest_results.json`. 
 
 - `main.py`: standard CLI, `predict()` entry point, input loading and output validation. The original scaffold model is kept as `example_predict` for comparison.
 - `model.py`: BdW retention, spend curves and the final settings (`FINAL_SETTINGS`).
-- `validation/backtest.py`, `validation/backtest_results.json`: chronological validation.
+- `backtest.py`, `backtest_results.json`: chronological validation.
 - `submission-contract.json`, `prediction_grid.csv`: unchanged from the course repository (dataset 5.1).
 - `pyproject.toml`, `uv.lock`: locked dependencies.

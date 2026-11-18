@@ -1,0 +1,232 @@
+{
+  "constant_hazard_scaffold": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.379,
+      "bias": -0.3767
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.3224,
+      "bias": -0.3208
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.27,
+      "bias": -0.2657
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.2067,
+      "bias": -0.2043
+    },
+    "mean_wape": 0.2945
+  },
+  "sBG_cell_pooled": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.073,
+      "bias": -0.0623
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0786,
+      "bias": -0.0702
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0874,
+      "bias": -0.0828
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0717,
+      "bias": -0.0698
+    },
+    "mean_wape": 0.0777
+  },
+  "BdW_cell_pooled": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0921,
+      "bias": -0.0859
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0941,
+      "bias": -0.0874
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0902,
+      "bias": -0.0861
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0721,
+      "bias": -0.0706
+    },
+    "mean_wape": 0.0871
+  },
+  "sBG_recency6_lb3_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0646,
+      "bias": -0.0358
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0607,
+      "bias": -0.0514
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.073,
+      "bias": -0.0699
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0553,
+      "bias": -0.0547
+    },
+    "mean_wape": 0.0634
+  },
+  "BdW_recency6_lb3_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0832,
+      "bias": -0.0661
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0743,
+      "bias": -0.0668
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0727,
+      "bias": -0.0695
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0546,
+      "bias": -0.0539
+    },
+    "mean_wape": 0.0712
+  },
+  "sBG_rec6_lb12_trend_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0606,
+      "bias": 0.0397
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0418,
+      "bias": -0.0009
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0421,
+      "bias": -0.0285
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0375,
+      "bias": -0.0343
+    },
+    "mean_wape": 0.0455
+  },
+  "sBG_rec6_lb9_trend_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0584,
+      "bias": 0.0335
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0419,
+      "bias": 0.0002
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0425,
+      "bias": -0.0294
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0377,
+      "bias": -0.0346
+    },
+    "mean_wape": 0.0451
+  },
+  "sBG_rec6_lb12_trend_half_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0555,
+      "bias": 0.0041
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0461,
+      "bias": -0.0237
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0523,
+      "bias": -0.0447
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0437,
+      "bias": -0.0424
+    },
+    "mean_wape": 0.0494
+  },
+  "BdW_rec6_lb12_trend_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.054,
+      "bias": 0.0059
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0447,
+      "bias": -0.0174
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0419,
+      "bias": -0.0281
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0373,
+      "bias": -0.0335
+    },
+    "mean_wape": 0.0445
+  },
+  "sBG_rec3_lb12_trend_calib20": {
+    "2024-12-01": {
+      "horizon_months": 12,
+      "wape": 0.0683,
+      "bias": 0.0537
+    },
+    "2025-03-01": {
+      "horizon_months": 9,
+      "wape": 0.0417,
+      "bias": 0.0009
+    },
+    "2025-06-01": {
+      "horizon_months": 6,
+      "wape": 0.0428,
+      "bias": -0.0298
+    },
+    "2025-09-01": {
+      "horizon_months": 3,
+      "wape": 0.0351,
+      "bias": -0.0321
+    },
+    "mean_wape": 0.047
+  }
+}
